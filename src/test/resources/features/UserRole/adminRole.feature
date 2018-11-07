@@ -20,7 +20,7 @@ Scenario: Log in with user role
 		And my primary OU should be "Angola" and my Bureau should be "Africa"
 		
 		
-#PBI-000
+#PBI-000 @git 
 @version:Release1.0
 @scenario:test-1 
 Scenario: Edit permission 
