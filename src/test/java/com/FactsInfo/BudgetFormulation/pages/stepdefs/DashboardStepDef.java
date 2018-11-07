@@ -15,6 +15,7 @@ import java.util.List;
 public class DashboardStepDef {
 	
 	dashboardPage dashboard;
+	
 	@Steps
 	com.FactsInfo.BudgetFormulation.pages.MinSteps.DashboardPageMinSteps commonSteps;
 	
@@ -39,7 +40,6 @@ public class DashboardStepDef {
 
 	@When("^I view my (.*) tile$")
 	public void i_view_my_Budget_Formulation_tile(String tileName) throws Throwable {
-		commonSteps.closeNotification();
 		dashboard.viewModulesTile(tileName);
 	   
 	}

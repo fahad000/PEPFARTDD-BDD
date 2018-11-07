@@ -1,22 +1,26 @@
 package com.FactsInfo.BudgetFormulationPage;
 
+import java.util.concurrent.TimeUnit;
+
+import org.apache.tools.ant.taskdefs.Sleep;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import net.serenitybdd.core.pages.PageObject;
 
 public class LogingPage extends PageObject{	
 	   static String loginUrl ="https://ngtest.dfafacts.gov";
 	    By checkTerms = By.xpath(".//*[@id='chkTerms']");
-	    String userXpath = ".//*[@id='loginName']";
+	    By userXpath =By.xpath( ".//*[@id='loginName']");
 	    String passwordXpath = ".//*[@id='Password']";
 	    By notificationCloseXpath = By.xpath(".//button[@class='close']");
 	    By passwordInput = By.xpath(".//*[@id='Password']");
-	    By submitButton = By.xpath(".//button[@id='btnLogin']");
+	    static String submitButton =".//button[@id='btnLogin']";
 	    
 	   
 	    
@@ -47,6 +51,7 @@ public class LogingPage extends PageObject{
 	    public void login(String user,String password) {
 	    	element(checkTerms).click();
 			typeInto(element(userXpath),user);
+			waitFor(ExpectedConditions.presenceOfElementLocated(passwordInput));
 			typeInto(element(passwordInput),password);
 			element(submitButton).click();
 			System.out.println("The user " + user + " has logged in with " + password);	
@@ -66,14 +71,17 @@ public class LogingPage extends PageObject{
 //		     return element(login).isVisible();		
 //	    }
 		 
-		 public void LoginWithRole(String role) {
+		 public void LoginWithRole(String role) throws InterruptedException {
 			//convert role to login name
 			String user =formatRole(role);
 			String password = "";
 			
 			//enter login name
 			element(checkTerms).click();
-			typeInto(element(userXpath),user);
+			waitFor(ExpectedConditions.presenceOfElementLocated(userXpath));
+//			element(userXpath).click();
+//			typeInto(element(userXpath),user);
+			element(userXpath).sendKeys(user);
 					
 			//enter password
 			if(role=="viewer") {
@@ -82,35 +90,41 @@ public class LogingPage extends PageObject{
 			else {
 				password="FactsInfo01!";
 			}
-			typeInto(element(passwordInput),password);
+			waitFor(ExpectedConditions.presenceOfElementLocated(passwordInput));
+////			element(passwordInput).click();
+			element(passwordInput).sendKeys(password);
+//			typeInto(element(passwordInput),password);
 			
 			//submit
-			element(submitButton).click();
+//			getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			 Thread.sleep(1000);
+			find(By.xpath(submitButton)).waitUntilClickable().click();
+			 Thread.sleep(1000);
 		 }
 		 
 		 public String formatRole(String role) {
 			 String user = "";
 			 switch(role.toLowerCase()) {
 			 case "fra user" :
-				 user="nicholsjl1@state.gov";
+				 user="testFRAUser@state.gov";
 				 break;
 			 case "f user" :
-				 user="fisherBE@state.gov";
+				 user="testFUser@state.gov";
 				 break;
 			 case "brm user" :
-				 user="pissa@usaid.gov";
+				 user="testBRMuser@state.gov";
 				 break;
 			 case "ou admin" :
-				 user="rharris@usaid.gov";
+				 user="testOUAdmin@state.gov";
 				 break;
 			 case "bp user" :
 				 user="Mariami@test.state.gov";
 				 break;
 			 case "ou user" :
-				 user="porterja@state.gov";
+				 user="testOUuser1@state.gov";
 				 break;
 			 case "budget bureau" :
-				 user="syousuf@usaid.gov";
+				 user="TestBudgetBuearu@state.gov";
 				 break;
 			 default : 
 				 System.out.println("Invalid user role");

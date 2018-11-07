@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import net.serenitybdd.core.pages.PageObject;
 
@@ -74,6 +75,7 @@ public class LogingPage extends PageObject{
 			
 			//enter login name
 			element(checkTerms).click();
+//			waitFor(ExpectedConditions.presenceOfElementLocated(userXpath));
 			typeInto(element(userXpath),user);
 					
 			//enter password

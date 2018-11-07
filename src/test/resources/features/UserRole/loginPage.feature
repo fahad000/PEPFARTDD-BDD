@@ -9,7 +9,7 @@ So that, I can perform my job based on my permission
 
 
 #PBI-000
-@version:Release1.0 @smoke
+@version:Release1.0 
 @scenario:test-1 
 Scenario Outline: Log in with user role
 		Given that the <user> has logged into the facts info application  

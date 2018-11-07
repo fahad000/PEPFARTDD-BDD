@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import java.util.List;
 import net.serenitybdd.core.pages.PageObject;
 
 
@@ -34,7 +35,7 @@ public class dashboardPage extends PageObject {
 	    
 		public boolean tileIsVisible(String moduleTile) {
 			String element =String.format(viewModulesTile, moduleTile);
-			waitFor(ExpectedConditions.presenceOfElementLocated(dashboardTitle));
+//			waitFor(ExpectedConditions.presenceOfElementLocated(viewModulesTile));
 	    	return element((element)).isVisible();
 		}
 		
@@ -42,7 +43,7 @@ public class dashboardPage extends PageObject {
 		
 	public void viewModulesTile(String tileName) {
 		String element =String.format(viewModulesTile, tileName);
-		waitFor(ExpectedConditions.presenceOfElementLocated(dashboardTitle));
+//		waitFor(ExpectedConditions.presenceOfElementLocated(viewModulesTile));
     	 element((element)).click();
 		
 	}
