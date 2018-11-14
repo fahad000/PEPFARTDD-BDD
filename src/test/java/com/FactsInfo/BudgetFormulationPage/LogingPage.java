@@ -15,27 +15,17 @@ import net.serenitybdd.core.pages.PageObject;
 
 public class LogingPage extends PageObject{	
 	   static String loginUrl ="https://ngtest.dfafacts.gov";
+//	   static String loginUrl ="https://pepfar.dfafacts.gov/mechanisms/search";
 	    By checkTerms = By.xpath(".//*[@id='chkTerms']");
 	    By userXpath =By.xpath( ".//*[@id='loginName']");
 	    String passwordXpath = ".//*[@id='Password']";
 	    By notificationCloseXpath = By.xpath(".//button[@class='close']");
 	    By passwordInput = By.xpath(".//*[@id='Password']");
 	    static String submitButton =".//button[@id='btnLogin']";
+		   
 	    
-	   
-	    
-	      public void visit() { 
-	        	   
-//   	            WebDriver driver;
-////	        	System.setProperty("webdriver.gecko.driver","/Users/Documents/geckodriver");
-//	        	System.setProperty("webdriver.chrome.driver","/Users/Documents/chromedriver");
-//	        	driver= new ChromeDriver();
-////	            driver = new FirefoxDriver();
-////	            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//                driver.get(loginUrl);
-//	    	      
-          this.openAt(loginUrl);  		     
-//		  this.getDriver().manage().window().maximize();  
+	      public void visit() { 	    	      
+          this.openAt(loginUrl);  		      
 	      }
 	      
           public void notificationClose() {
@@ -63,13 +53,6 @@ public class LogingPage extends PageObject{
 	    		System.out.println("The user " + user + " has logged in with no password");	
 	    	}
 		 	
-//		public void logout(String user) {
-//		    	System.out.println("Loggin out");
-//				element(logoutButton).click();
-//		 }
-//		 public boolean loginVisible() {
-//		     return element(login).isVisible();		
-//	    }
 		 
 		 public void LoginWithRole(String role) throws InterruptedException {
 			//convert role to login name
@@ -79,8 +62,6 @@ public class LogingPage extends PageObject{
 			//enter login name
 			element(checkTerms).click();
 			waitFor(ExpectedConditions.presenceOfElementLocated(userXpath));
-//			element(userXpath).click();
-//			typeInto(element(userXpath),user);
 			element(userXpath).sendKeys(user);
 					
 			//enter password
@@ -91,12 +72,7 @@ public class LogingPage extends PageObject{
 				password="FactsInfo01!";
 			}
 			waitFor(ExpectedConditions.presenceOfElementLocated(passwordInput));
-////			element(passwordInput).click();
 			element(passwordInput).sendKeys(password);
-//			typeInto(element(passwordInput),password);
-			
-			//submit
-//			getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			 Thread.sleep(1000);
 			find(By.xpath(submitButton)).waitUntilClickable().click();
 			 Thread.sleep(1000);
@@ -135,7 +111,6 @@ public class LogingPage extends PageObject{
 		 
 		 
 		 public void workflowLogin(String role) {
-//			 System.out.println("Logging into the common u/i");
 			 String user = null;
 			 String password =null;
 			 switch(role.toLowerCase()) {
@@ -175,8 +150,7 @@ public class LogingPage extends PageObject{
 			typeInto(element(userXpath),user);
 			typeInto(element(passwordInput),password);
 			//submit
-			element(submitButton).click();
-			//System.out.println("The user " + user + " has logged in with " + password);		      
+			element(submitButton).click();		      
 		 }
 		
 	}

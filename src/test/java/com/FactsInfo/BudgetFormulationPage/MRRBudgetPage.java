@@ -26,18 +26,17 @@ public class MRRBudgetPage extends PageObject{
 	 static String tabXpath=".//a[@data-ng-click='vm.changeView(tab)'][text()='%s']";
 	 By clicktabXpath=By.xpath(".//a[@data-ng-click='vm.changeView(tab)'][text()='%s']");
 	 By ClicktabXpath=By.xpath(".//a[@data-ng-click='vm.changeView(tab)'][text()='Home']");
-	 By switchWindow= By.xpath(".//div[@data-ng-switch-when='Budget']");
+	 By switchWindow= By.xpath(".//div[@data-ng-switch-when='%s']");
 	 static String ClickOtherTabXpath=".//button[@data-ng-click='vm.setActiveTab(tab)'][@title='Other']";
 	 By BudgetGridFlields=By.xpath(".//*[@id='divrdresourcerequestc8061b02-46bb-467b-88ab-71be8e0b9cf3']");
 	 static String typeInGrid=".//*[@id='divrdresourcerequestc8061b02-46bb-467b-88ab-71be8e0b9cf3'][@class='ui-grid-cell-contents ng-scope ng-binding ui-grid-cell-focus']";
-	 
-	 
 	 
 	 
 	    public void clicktab(String tab) {	 
 		 waitFor(ExpectedConditions.invisibilityOfElementLocated(clicktabXpath));
 	 	 String element =String.format(tabXpath,tab);
 	     element(By.xpath(element)).waitUntilEnabled().click();
+	     
 	    }
 	public void clickAccountListDropdown(String accountType) {
 		new WebDriverWait(getDriver(), 4)

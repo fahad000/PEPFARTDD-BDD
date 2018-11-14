@@ -15,7 +15,7 @@ public class MRRBudgetStepDef {
 
 	
 	
-	@When("^I view the (.*) tab$")
+	@When("^I view the '(.*)' tab$")
 	public void i_view_the_Budget_tab(String tab) throws Throwable {
 		budget.clicktab(tab);
 		

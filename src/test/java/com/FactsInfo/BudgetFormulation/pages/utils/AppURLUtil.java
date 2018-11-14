@@ -5,7 +5,8 @@ import net.serenitybdd.core.pages.PageObject;
 
 public class AppURLUtil extends PageObject {
 
-	static String liveTestIndex = "https://ngtest.dfafacts.gov";
+//	static String liveTestIndex = "https://ngtest.dfafacts.gov";
+	static String liveTestIndex = "https://pepfar.dfafacts.gov/mechanisms/search";
 	static String qaIndex = "https://ngtest.dfafacts.gov";
 	static String demoIndex = "";
 	static String preprod = "http://std2r02-preprod.fis.local/";

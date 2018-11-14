@@ -38,7 +38,7 @@ public class DashboardStepDef {
 	}
 		
 
-	@When("^I view my (.*) tile$")
+	@When("^I view my '(.*)' tile$")
 	public void i_view_my_Budget_Formulation_tile(String tileName) throws Throwable {
 		dashboard.viewModulesTile(tileName);
 	   

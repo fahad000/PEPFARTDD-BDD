@@ -57,8 +57,8 @@ public class BudgetHomePage extends PageObject {
 
     }
     	  public boolean budgetModuleVisible(String moduleType) {	
-//    			    waitFor(ExpectedConditions.presenceOfElementLocated(budgetAreaOptionClick));
-//    	    		element(budgetAreaOptionClick).waitUntilEnabled().click();
+    			    waitFor(ExpectedConditions.presenceOfElementLocated(budgetAreaOptionClick));
+   	    		    element(budgetAreaOptionClick).waitUntilEnabled().click();
     	    		 String element =String.format(budgetAreaOption,moduleType);
     	        	return element(By.xpath(element)).isPresent();
     	    	 

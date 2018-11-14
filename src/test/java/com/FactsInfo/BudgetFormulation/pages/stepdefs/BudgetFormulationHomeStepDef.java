@@ -36,13 +36,7 @@ public class BudgetFormulationHomeStepDef {
 		} 
 		
 	}
-		@Then("^the following top level dropdown menu should display:$")
-		public void the_following_top_level_dropdown_menu_should_display(List<String> menu) throws Throwable {
-			
-		  
-		}
-
-
+		
 		@Then("^the following tabs should display:$")
 		public void the_following_tabs_should_display(List<String> tab) throws Throwable {
 			for (String tabName : tab) {

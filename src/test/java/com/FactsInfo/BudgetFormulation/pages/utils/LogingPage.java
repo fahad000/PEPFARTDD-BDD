@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import net.serenitybdd.core.pages.PageObject;
 
 public class LogingPage extends PageObject{	
-	   static String loginUrl ="https://ngtest.dfafacts.gov";
+//	   static String loginUrl ="https://ngtest.dfafacts.gov";
+	   static String loginUrl ="https://pepfar.dfafacts.gov/mechanisms/search";
 	    By checkTerms = By.xpath(".//*[@id='chkTerms']");
 	    String userXpath = ".//*[@id='loginName']";
 	    String passwordXpath = ".//*[@id='Password']";
@@ -42,7 +43,8 @@ public class LogingPage extends PageObject{
 ////	            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //                driver.get(loginUrl);
 //	    	      
-          this.openAt("https://ngtest.dfafacts.gov");  		     
+//          this.openAt("https://ngtest.dfafacts.gov");
+	       this.openAt("https://pepfar.dfafacts.gov/mechanisms/search");
 //		  this.getDriver().manage().window().maximize();      
 	    }
 	    

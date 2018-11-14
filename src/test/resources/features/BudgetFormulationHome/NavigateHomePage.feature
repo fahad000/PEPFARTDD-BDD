@@ -41,7 +41,7 @@ Scenario: Navigate to the tab options
    	  	
 #PBI-000
 @version:Release1.0
-@scenario:test-3 
+@scenario:test-3 @cbj1
 Scenario: Verify Budget area list  
    	  	Given that the FRA User has logged into the facts info application
    	    When I view my Budget Formulation tile 

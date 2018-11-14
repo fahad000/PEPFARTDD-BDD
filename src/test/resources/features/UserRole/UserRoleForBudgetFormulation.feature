@@ -4,7 +4,7 @@ As a Budget Formulation user, I should have access to Bereau and OU(s) based on 
   	  	
  #PBI-000
 @version:Release1.0
-@scenario:test-4 @marcus
+@scenario:test-4 
 Scenario Outline: Verify that the FRA, F, and BRM user can access all Bureau/OU(s)
    	  	Given that the <user> has logged into the facts info application
 		When I view my Budget Formulation tile 
