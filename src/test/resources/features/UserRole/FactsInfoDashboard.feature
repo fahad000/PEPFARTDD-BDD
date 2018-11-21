@@ -8,7 +8,7 @@ I want view all modules based on my user role and permission
 @version:Release1.0 
 @scenario:test-1 
 Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application
+		Given that the '<user>' has logged into the facts info application
 		Then the following tile should be visible:
 			|Manage Help|
 			|Manage Notifications|
@@ -36,7 +36,7 @@ Scenario Outline: Log in with user role
 @version:Release1.0 
 @scenario:test-2 
 Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application
+		Given that the '<user>' has logged into the facts info application
 		Then the following tile should be visible:							  		
 			|Budget Formulation|
 			|Evaluation Registry|

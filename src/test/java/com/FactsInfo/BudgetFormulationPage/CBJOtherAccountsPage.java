@@ -41,8 +41,8 @@ public class CBJOtherAccountsPage extends PageObject {
 		    element(By.xpath(element)).click();
 	 }
      	   public boolean allButtonsPresent(String buttonName) {
-     			if (element(saveButton).isPresent() &&
-     				element(discardButton).isPresent()
+     			if (element(saveButton).isCurrentlyEnabled() &&
+     				element(discardButton).isCurrentlyEnabled()
      					) {
      				return true;
      				} else {
@@ -52,7 +52,7 @@ public class CBJOtherAccountsPage extends PageObject {
 	 }	
 	 public boolean toplevelOUoptionIsNotVisible(String menuName) {
 		 if(element(oUnotvISIBLE).isVisible());
-		 return false;
+		 return true;
 		} 
 			
 		public boolean accountPresent(String account) throws InterruptedException {

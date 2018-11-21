@@ -76,7 +76,7 @@ Scenario: Verify FY20 Bureau Appeal' tabs displayd for based on bureau selection
 Scenario: Verify FY20 'OMB Submission' tabs displayd for based on bureau selection 
 		When I select 'OMB Submission' from Budget Area
 		Then the following top level dropdown menu should display:
-   	  	|Fiscal Year|Budget Area|Bureau|Operating Unit|  		
+   	  	|Fiscal Year|Budget Area|Bureau|Operating Unit|		
 		And the following tabs should display:
 	   	|Home|Budget|Attributions|   	
 	   	

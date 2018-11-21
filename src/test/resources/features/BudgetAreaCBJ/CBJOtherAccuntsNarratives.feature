@@ -1,15 +1,15 @@
 @cbj-other-account @reliable
 Feature: CBJ Narrative Other Accounts Narrative
 Background:
-        Given that the FRA User has logged into the facts info application
+        Given that the 'FRA User' has logged into the facts info application
         And I view my 'Budget Formulation' tile 
 #PBI-19535, 19537
 @version:Release1.0
-@scenario:test-2 
+@scenario:test-2 @test
 Scenario: Verify FY20 CBJ Other accoonts tab displayd for based on bureau selection 
 		When I select 'Congressional Budget Justification' from Budget Area 		
 		Then the following tabs should display:
-	   	  	|Home|
+	   	  	|Home| 
 	   	  	|Budget|
 	   	  	|Attributions|
 	   	  	|Mission Objectives|
@@ -22,13 +22,12 @@ Scenario: Verify FY20 CBJ Other accoonts tab displayd for based on bureau select
    	  	    	   			
 #PBI-19535, 19537
 @version:Release1.0
-@scenario:test-2 
+@scenario:test-2 @save
 Scenario: Verify buttons for Other Accounts narrative
 		When I select 'Congressional Budget Justification' from Budget Area  
 		When select the 'USAID Management' from the Bureau dropdown list
 		When I view the 'Other Accounts' tab
-		Then the 'Save' and 'Discard' buttons should be visible
-				
+		Then the 'Save' and 'Discard' buttons should be enabled				
 #PBI-19535
 @version:Release1.0
 @scenario:test-2 
@@ -36,7 +35,7 @@ Scenario: Verify that the Correct Account Names and OUs (that are funded) popula
         When I select 'Congressional Budget Justification' from Budget Area 
 		When select the 'USAID Management' from the Bureau dropdown list
 		When I view the 'Other Accounts' tab						
-        Then the following accounts should display in account dropdown list:
+        Then the following accounts should display in account dropdown list:        
 	        |USAID Operational Accounts|
 	    When selecting an 'USAID Operational Accounts' from above list that is funded 	
 		Then the following OU should display in OU dropdwon list:

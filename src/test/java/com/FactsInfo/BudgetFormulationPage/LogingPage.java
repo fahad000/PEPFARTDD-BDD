@@ -57,12 +57,15 @@ public class LogingPage extends PageObject{
 		 public void LoginWithRole(String role) throws InterruptedException {
 			//convert role to login name
 			String user =formatRole(role);
-			String password = "";
-			
+			String password = "";		
 			//enter login name
 			element(checkTerms).click();
-			waitFor(ExpectedConditions.presenceOfElementLocated(userXpath));
-			element(userXpath).sendKeys(user);
+//			waitFor(ExpectedConditions.presenceOfElementLocated(userXpath));
+			Thread.sleep(1500);
+			element(userXpath).waitUntilEnabled().sendKeys(user);
+			Thread.sleep(1500);
+			
+			
 					
 			//enter password
 			if(role=="viewer") {

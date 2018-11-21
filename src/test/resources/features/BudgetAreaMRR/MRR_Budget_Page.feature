@@ -5,7 +5,7 @@ Feature: Mission Resource Request page
 @scenario:test-2 @cbj2
 Scenario: Verify account type in Account dropdown list
    	  	Given that the FRA User has logged into the facts info application
-   	  	When I view my Budget Formulation tile 
+   	  	When I view my 'Budget Formulation' tile 
 		Then the Budget Formulation home page should display
 		And I view the 'Budget' tab
 		Then I view the account dropdown following option should exist:   		  

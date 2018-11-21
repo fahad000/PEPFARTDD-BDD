@@ -24,8 +24,15 @@ public class CBJOtherAccounts {
 		assertFalse("the following options should be avaiable: "+menuName,cbj.toplevelOUoptionIsNotVisible(menuName));	
 		}
 	}
-	@Then("^the 'Save' and '(.*)' buttons should be visible$")
-	public void the_save_and_discard_buttons_should_be_visible(List<String> buttons) throws Throwable {
+		
+		@Then("^the following top level dropdown menu should display:$")
+		public void the_following_top_level_dropdown_menu_should_display(List<String> menu) throws Throwable {
+			for (String menuName : menu) {
+			assertTrue("the following options should be avaiable: "+menuName,cbj.toplevelOUoptionIsNotVisible(menuName));	
+			}	
+	}
+	@Then("^the 'Save' and '(.*)' buttons should be enabled$")
+	public void the_save_and_discard_buttons_should_be_enabled(List<String> buttons) throws Throwable {
 		for (String buttonName : buttons) {
 			assertTrue("the following options should not be avaiable: "+buttonName,cbj.allButtonsPresent(buttonName));
 	}

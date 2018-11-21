@@ -60,7 +60,7 @@ Scenario: Verify Budget area list
 @version:Release1.0
 @scenario:test-4 
 Scenario: Verify Budget Bureau list for FRA User 
-   	  	Given that the FRA User has logged into the facts info application
+   	  	Given that the 'FRA User' has logged into the facts info application
    	  	When I view my Budget Formulation tile 
 #  	  	When I view the Budget bureau drop down menu  
    	  	Then the following bureau options should be available:
@@ -106,8 +106,8 @@ Scenario: Verify Budget Bureau list for FRA User
 @version:Release1.0
 @scenario:test-4 
 Scenario: Verify OU List for FRA User
-   	  	Given that the FRA User has logged into the facts info application
-		When I view my Budget Formulation tile 
+   	  	Given that the 'FRA User' has logged into the facts info application
+		When I view my 'Budget Formulation' tile 
    	  	Then the following OU options should be avaiable:
    	  	|Angola|
    	  	|Benin|  	  	

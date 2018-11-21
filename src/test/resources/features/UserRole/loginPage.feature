@@ -12,7 +12,7 @@ So that, I can perform my job based on my permission
 @version:Release1.0 
 @scenario:test-1 @login
 Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application  
+		Given that the '<user>' has logged into the facts info application  
         Then the facts info dashboard should display
         And I view my 'Evaluation Registry' tile      
 		Examples:
