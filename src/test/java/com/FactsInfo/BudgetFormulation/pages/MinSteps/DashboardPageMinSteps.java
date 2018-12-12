@@ -11,8 +11,6 @@ public class DashboardPageMinSteps {
 	dashboardPage dashboard;
 	BudgetHomePage home;
 	
-
-	
 	@Step
 	public void CheckTerms() {
 		login.acknowladgeCheckTerms();

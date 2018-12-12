@@ -11,7 +11,7 @@ Scenario: Verify FY20 CBJ Other accoonts tab displayd for based on bureau select
 		Then the following top level dropdown menu should display:
    	  	|Fiscal Year|Budget Area|Bureau|Operating Unit| 		
 		And the following tabs should display:
-	   	|Home|Budget|Attributions|Mission Objectives|ESDF|Bureau Overview|Other Accounts|	   	  
+	   	|Home|Budget|Attributions|Mission Objectives|ESDF|Bureau Overview|Other Accounts|Special Reports|	   	  
 
 #PBI-000
 @version:Release4.0

@@ -1,4 +1,4 @@
-@dashboard @reliable
+@FACTSdashboard @reliable
 Feature: FACTS Info system dashboard
 
 As a FACTS Info user, 
@@ -7,8 +7,8 @@ I want view all modules based on my user role and permission
 #PBI-000
 @version:Release1.0 
 @scenario:test-1 
-Scenario Outline: Log in with user role
-		Given that the '<user>' has logged into the facts info application
+Scenario: Log in with user 'FRA USER' role
+		Given that the 'FRA USER' has logged into the facts info application
 		Then the following tile should be visible:
 			|Manage Help|
 			|Manage Notifications|
@@ -28,15 +28,12 @@ Scenario Outline: Log in with user role
 			|Review and Approval|
 		And the following tile should not be visible:
 			|Evaluation Registry Admin|		 
-		Examples:
-			| user       | 
-			| FRA USER   | 
 				
 #PBI-000 
 @version:Release1.0 
 @scenario:test-2 
-Scenario Outline: Log in with user role
-		Given that the '<user>' has logged into the facts info application
+Scenario: Log in with user 'F USER' role
+		Given that the 'F USER' has logged into the facts info application
 		Then the following tile should be visible:							  		
 			|Budget Formulation|
 			|Evaluation Registry|
@@ -55,15 +52,12 @@ Scenario Outline: Log in with user role
 			|Manage User Request|
 			|Manage Notifications|
 			|Manage Help|	 
-		Examples:
-			| user     | 
-			| F USER   |
 			
 ##PBI-000
 @version:Release1.0 
 @scenario:test-4 
-Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application
+Scenario: Log in with user 'Budget Bureau' role
+		Given that the 'Budget Bureau' has logged into the facts info application
 		Then the following tile should be visible:							  		
 			|Budget Formulation|
 			|Notifications|
@@ -82,17 +76,13 @@ Scenario Outline: Log in with user role
 			|Reference Data Management|
 			|User Accounts|	
 			|Manage User Request|
-			|PPR|
-       Examples:
-			| user     | 
-			| Budget Bureau|	 
-		
-			
+			|PPR|	 
+					
    #PBI-000
 @version:Release1.0 
 @scenario:test-4 
-Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application
+Scenario: Log in with user 'BRM USER' role
+		Given that the 'BRM USER' has logged into the facts info application
 		Then the following tile should be visible:							  		
 			|Budget Formulation|
 			|Evaluation Registry|
@@ -112,15 +102,12 @@ Scenario Outline: Log in with user role
 			|User Accounts|	
 			|Manage User Request|
 			|PPR|
-       Examples:
-			| user     | 
-			| BRM USER |
 
    #PBI-000
 @version:Release1.0 
 @scenario:test-4 
-Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application
+Scenario: Log in with user 'OU User' role
+		Given that the 'OU User' has logged into the facts info application
 		Then the following tile should be visible:							  		
 			|Budget Formulation|
 			|Evaluation Registry|
@@ -141,15 +128,11 @@ Scenario Outline: Log in with user role
 			|User Accounts|	
 			|Manage User Request|
 			
-       Examples:
-			| user     | 
-			| OU User  |
-			
    #PBI-000
 @version:Release1.0 
 @scenario:test-4 
-Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application
+Scenario: Log in with user 'OU Admin' role
+		Given that the 'OU Admin' has logged into the facts info application
 		Then the following tile should be visible:
 			|User Accounts|	
 			|Manage User Request|							  		
@@ -168,35 +151,29 @@ Scenario Outline: Log in with user role
 			|Evaluation Registry Admin|
 			|Manage Notifications|
 			|Manage Help|
-			|Reference Data Management|			
-       Examples:
-			| user     | 
-			| OU Admin |	
+			|Reference Data Management|				
 			
    #PBI-000
 @version:Release1.0 
 @scenario:test-4 
-Scenario Outline: Log in with user role
-		Given that the <user> has logged into the facts info application
+Scenario: Log in with user 'BP User' role
+		Given that the 'BP User' has logged into the facts info application
 		Then the following tile should be visible:
+			|Budget Formulation|
+			|Notifications|
+			|Reports|
+			|Help|
+		And the following tile should not be visible:
+			|Evaluation Registry Admin|
+			|Manage Notifications|
+			|Manage Help|
+			|Reference Data Management|
 			|User Accounts|	
 			|Manage User Request|							  		
-			|Budget Formulation|
 			|Evaluation Registry|
-			|Notifications|
-			|Help|
 			|OP|
 			|PPR| 
 			|Review and Final Submission|
 			|Partner Search|
 			|Public Private Partnership|
-			|Reports|
-			|Review and Approval|
-		And the following tile should not be visible:
-			|Evaluation Registry Admin|
-			|Manage Notifications|
-			|Manage Help|
-			|Reference Data Management|			
-       Examples:
-			| user     | 
-			| BP User |	
+			|Review and Approval|			

@@ -29,7 +29,12 @@ public class MRRBudgetStepDef {
 		
 	    
 	}
-
+	
+	@Then("^MRR home should have '(.*)' and '(.*)' buttons$")
+	public void MRR_home_should_have_Pre_Submitted_Report_and_Save_buttons(String submit,String save ) throws Throwable {
+		budget.MRRHomebuttonsVisible(submit,save);
+	}
+	    
 	@When("^I view the account dropdown following option should exist:$")
 	public void i_view_the_account_dropdown_following_option_should_exist(List<String> account) throws Throwable {
 		for (String accountName : account) {

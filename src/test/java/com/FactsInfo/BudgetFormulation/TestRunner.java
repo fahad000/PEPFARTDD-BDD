@@ -13,7 +13,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 //        ,glue="/budget-formulation-test-automation/src/test/java/com/FactsInfo/BudgetFormulation/pages/stepdefs"
         ,dryRun = false
         ,monochrome = false
-        ,tags = { "@home-tab"        		    		     		
+        ,tags = { "@home"        		    		     		
         		, "~@manual"
         		, "~@unreliable" }
 )

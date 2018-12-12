@@ -6,8 +6,8 @@ As a Budget Formulation user, I should have access to Bereau and OU(s) based on 
 @version:Release1.0
 @scenario:test-4 
 Scenario Outline: Verify that the FRA, F, and BRM user can access all Bureau/OU(s)
-   	  	Given that the <user> has logged into the facts info application
-		When I view my Budget Formulation tile 
+   	  	Given that the '<user>' has logged into the facts info application
+		When I view my 'Budget Formulation' tile 
    	  	Then the following OU options should be avaiable:
 	  	  	|Angola|Benin|Botswana|Burkina Faso|Burundi|Cabo Verde|
 	   	  	|Cameroon|Central African Republic|Chad|Comoros|Democratic Republic of the Congo|Djibouti|
@@ -38,13 +38,11 @@ Scenario Outline: Verify that the FRA, F, and BRM user can access all Bureau/OU(
 
  #PBI-000
 @version:Release1.0
-@scenario:test-4 @brm
+@scenario:test-4 
 Scenario: Verify that BRM USER can access all Bureau/OU(s) and only edit assigned OU
-   	  	Given that the BRM USER has logged into the facts info application
-		When I view my Budget Formulation tile
-#		Then the following OU options should be avaiable:
-#   	  		|Bangladesh|
-   	  	And I view the Budget tab
+   	  	Given that the 'BRM USER' has logged into the facts info application
+		When I view my 'Budget Formulation' tile
+   	  	And I view the 'Budget' tab
 		And Select ESDF - OCO from account dropdown list   
 		And I click on the other tab 
 		Then I should be able to enter 200 in the budget grid and save 	 
@@ -54,35 +52,31 @@ Scenario: Verify that BRM USER can access all Bureau/OU(s) and only edit assigne
  #PBI-000
 @version:Release1.0
 @scenario:test-4  
-Scenario Outline: Verify that the "OU Admin" user has access to assigned OU’s Only  
-   	  	Given that the <user> has logged into the facts info application
-		When I view my Budget Formulation tile 
+Scenario: Verify that the "OU Admin" user has access to assigned OU’s Only  
+   	  	Given that the 'OU Admin' has logged into the facts info application
+		When I view my 'Budget Formulation' tile 
    	  	Then the following OU options should be avaiable:
    	  		|Bangladesh|
    	  	Then the following bureau options should be available:
    	  		|South and Central Asia|
-   	  	Examples:
-	   	  	|user|
-	   	  	|OU Admin|
+   	 
  #PBI-000
 @version:Release1.0
 @scenario:test-4
-Scenario Outline: Verify that the "OU" user has access to assigned OU’s Only 
-   	  	Given that the <user> has logged into the facts info application
-		When I view my Budget Formulation tile 
+Scenario: Verify that the "OU" user has access to assigned OU’s Only 
+   	  	Given that the 'OU User' has logged into the facts info application
+		When I view my 'Budget Formulation' tile 
    	  	Then the following OU options should be avaiable:
    	  		|Afghanistan|
    	    Then the following bureau options should be available:
    	  		|South and Central Asia| 
-   	  	Examples:
-	   	  	|user|
-	   	  	|OU User|   	  	  	  	  	  	   	  	
+   	    	  	  	  	  	  	   	  	
 #PBI-000 
 @version:Release1.0
 @scenario:test-4 
-Scenario Outline: Verify that Budget Bureau user can access to all OU’s associated with assigned Bureaus Only 
-   	  	Given that the <user> has logged into the facts info application
-   	  	When I view my Budget Formulation tile  
+Scenario: Verify that Budget Bureau user can access to all OU’s associated with assigned Bureaus Only 
+   	  	Given that the 'Budget Bureau' has logged into the facts info application
+   	  	When I view my 'Budget Formulation' tile  
    	  	Then the following bureau options should be available:
    	  		|Western Hemisphere|
    	  	And the following OU options should be avaiable:
@@ -90,8 +84,5 @@ Scenario Outline: Verify that Budget Bureau user can access to all OU’s associ
 	   	  	|Costa Rica|Cuba|Dominica|Dominican Republic|USAID South America Regional|USAID South America Regional|Venezuela|Ecuador|
 	   	  	|El Salvador|Guatemala|Guyana|Haiti|Honduras|Jamaica|Mexico|Nicaragua|
 	   	  	|Panama|Paraguay|Peru|State Western Hemisphere Regional|Suriname|Trinidad and Tobago|Uruguay|USAID Caribbean Development Program|
-	#   	  	|USAID South America Regional|   	  	
-   	  	Examples:
-	   	  	|user|
-	   	  	| Budget Bureau|
+	
    	  

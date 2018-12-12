@@ -60,7 +60,6 @@ public class LogingPage extends PageObject{
 			String password = "";		
 			//enter login name
 			element(checkTerms).click();
-//			waitFor(ExpectedConditions.presenceOfElementLocated(userXpath));
 			Thread.sleep(1500);
 			element(userXpath).waitUntilEnabled().sendKeys(user);
 			Thread.sleep(1500);

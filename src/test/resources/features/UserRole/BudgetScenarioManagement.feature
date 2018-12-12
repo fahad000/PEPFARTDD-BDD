@@ -26,7 +26,7 @@ Scenario: Log in with user role
 Scenario: Edit permission 
 		When I select Budget area as "Congressional Budget Justification"
 		And I view my Budget tab 
-		And Select a value from account dropdown list 
+		And Select a value from account dropdown list 	
 		And I click on the other tab
 		Then I should be able to enter values in the budget grid and save
 		

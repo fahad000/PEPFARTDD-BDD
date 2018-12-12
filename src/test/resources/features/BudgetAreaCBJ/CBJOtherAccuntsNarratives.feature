@@ -5,7 +5,7 @@ Background:
         And I view my 'Budget Formulation' tile 
 #PBI-19535, 19537
 @version:Release1.0
-@scenario:test-2 @test
+@scenario:test-2
 Scenario: Verify FY20 CBJ Other accoonts tab displayd for based on bureau selection 
 		When I select 'Congressional Budget Justification' from Budget Area 		
 		Then the following tabs should display:
@@ -16,13 +16,14 @@ Scenario: Verify FY20 CBJ Other accoonts tab displayd for based on bureau select
 	   	  	|ESDF| 
 	   	  	|Bureau Overview|
 	   	  	|Other Accounts|
+	   	  	|Special Reports|
 	   	  When I view the 'Other Accounts' tab
 		  And the following top level dropdown menu should not display:
    	  	    |Operating Unit| 
    	  	    	   			
 #PBI-19535, 19537
 @version:Release1.0
-@scenario:test-2 @save
+@scenario:test-2 
 Scenario: Verify buttons for Other Accounts narrative
 		When I select 'Congressional Budget Justification' from Budget Area  
 		When select the 'USAID Management' from the Bureau dropdown list

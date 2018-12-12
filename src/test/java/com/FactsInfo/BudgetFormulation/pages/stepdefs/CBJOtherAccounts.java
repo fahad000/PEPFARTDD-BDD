@@ -21,7 +21,7 @@ public class CBJOtherAccounts {
 	@Then("^the following top level dropdown menu should not display:$")
 	public void the_following_top_level_dropdown_menu_should_not_display(List<String> menu) throws Throwable {
 		for (String menuName : menu) {
-		assertFalse("the following options should be avaiable: "+menuName,cbj.toplevelOUoptionIsNotVisible(menuName));	
+		assertTrue("the following options should be avaiable: "+menuName,cbj.toplevelOUoptionIsNotVisible(menuName));	
 		}
 	}
 		

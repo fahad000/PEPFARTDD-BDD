@@ -18,8 +18,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class MRRBudgetPage extends PageObject{
 	private static final String WebUiCommonHelper = null;
-	By ExportButtonxpath= By.xpath("");
-	 By SaveButtonxpath= By.xpath("");
+	 By preSubmitReportButtonxpath= By.xpath(".//button[@data-ng-click='vm.export()']");
+	 By SaveButtonxpath= By.xpath(".//button[@data-ng-click='vm.submit()']");
 	 By DiscardButtonxpath= By.xpath("");
 	 By clickAccountxpath=By.xpath(".//select[@class='form-control input-sm ng-pristine ng-valid'][@data-ng-change='tlbr.changeAccount()']");
 	 static String AccountDropdownListxpath= ".//select[@data-ng-change='tlbr.changeAccount()']//option[text()='%s']";
@@ -31,6 +31,18 @@ public class MRRBudgetPage extends PageObject{
 	 By BudgetGridFlields=By.xpath(".//*[@id='divrdresourcerequestc8061b02-46bb-467b-88ab-71be8e0b9cf3']");
 	 static String typeInGrid=".//*[@id='divrdresourcerequestc8061b02-46bb-467b-88ab-71be8e0b9cf3'][@class='ui-grid-cell-contents ng-scope ng-binding ui-grid-cell-focus']";
 	 
+	 public boolean MRRHomebuttonsVisible(String save, String submit) {
+		 if (element(preSubmitReportButtonxpath).isCurrentlyEnabled() &&
+  				element(SaveButtonxpath).isCurrentlyEnabled()
+  					) {
+  				return true;
+  				} else {
+  					return false;
+  				} 
+	
+	 }
+		 
+		 
 	 
 	    public void clicktab(String tab) {	 
 		 waitFor(ExpectedConditions.invisibilityOfElementLocated(clicktabXpath));
