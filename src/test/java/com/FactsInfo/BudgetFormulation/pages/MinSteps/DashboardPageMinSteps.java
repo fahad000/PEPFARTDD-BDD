@@ -17,8 +17,9 @@ public class DashboardPageMinSteps {
 	}
 	@Step
 	public void closeNotification() {
-		login.notificationClose();
+		login.notificationClose();		
 	}
+
 	@Step
 	public void clickBudgetAreaDropdown() {
 		home.clickBudgetArea();
@@ -28,7 +29,7 @@ public class DashboardPageMinSteps {
 //		home.clickBudgetArea();
 //	}
 	@Step
-	public void clickBudgetFormulationTile(String tileName) {
+	public void clickMulationTile(String tileName) {
 		dashboard.viewModulesTile(tileName);
 	}
 }

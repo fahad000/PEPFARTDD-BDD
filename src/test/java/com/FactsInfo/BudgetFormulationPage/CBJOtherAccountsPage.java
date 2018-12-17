@@ -24,6 +24,11 @@ public class CBJOtherAccountsPage extends PageObject {
 	 static String verifyOU=".//select[@data-ng-change='vm.getNarrative()']//option[text()='%s']";
 	 By clickOUField=By.xpath(".//select[@data-ng-change='vm.getNarrative()']");
 	 By enterNarrative= By.xpath(".//*[@id='narrativeDetails']");
+	 By updateNarStatusButton=By.xpath(".//button[@data-ng-click='tlbr.updateNarrativeStatus()']");
+	 By reOpenNarStatusButton=By.xpath(".//button[@data-ng-click='tlbr.reOpenNarrativeStatus()']");
+	 By statusConfirPopup=By.xpath(".//button[@ng-click='yes()']");
+	 static String verifyStatus=".//span[@class='ng-binding'][text()='%s']";
+	 
 	 
 	 
 
@@ -42,21 +47,43 @@ public class CBJOtherAccountsPage extends PageObject {
 	 }
      	   public boolean allButtonsPresent(String buttonName) {
      			if (element(saveButton).isCurrentlyEnabled() &&
-     				element(discardButton).isCurrentlyEnabled()
+     				element(discardButton).isCurrentlyEnabled()&&
+     				element(updateNarStatusButton).isCurrentlyEnabled() &&
+             		element(reOpenNarStatusButton).isCurrentlyEnabled()
      					) {
      				return true;
      				} else {
      					return false;
      				} 
-	
+     	   }
+     			public boolean updateAndReopenButon(String button) {
+         			if (element(updateNarStatusButton).isCurrentlyEnabled() &&
+         				element(reOpenNarStatusButton).isCurrentlyEnabled()
+         					) {
+         				return false;
+         				} else {
+         					return true;
+         				}
 	 }	
 	 public boolean toplevelOUoptionIsNotVisible(String menuName) {
 		 if(element(oUnotvISIBLE).isVisible());
 		 return true;
 		} 
+	 public boolean verifyNatStatus(String staus) throws InterruptedException {	
+		 Thread.sleep(1000);
+		 String element =String.format(verifyStatus,staus);
+		 Thread.sleep(1000);
+		 return element(By.xpath(element)).waitUntilPresent().isPresent();
 			
+		}
+		public void clickUpdateStausButton() throws InterruptedException{
+			element(updateNarStatusButton).click();
+			Thread.sleep(1000);
+			this.getDriver().switchTo().defaultContent();
+			Thread.sleep(1000);
+			element(statusConfirPopup).click();	
+		}
 		public boolean accountPresent(String account) throws InterruptedException {
-//			waitFor(ExpectedConditions.presenceOfElementLocated(clickAccount));
 			   Thread.sleep(1000);
 	    	   this.getDriver().switchTo().defaultContent();
 	    	   Thread.sleep(1000);
@@ -67,7 +94,7 @@ public class CBJOtherAccountsPage extends PageObject {
 			
 		}
 		public boolean ousPresent(String ou) {
-//			waitFor(ExpectedConditions.presenceOfElementLocated(clickOUField));
+//			
 			   element(clickOUField).click();
 	    	   String element =String.format(verifyOU,ou);
 			   return element(By.xpath(element)).waitUntilPresent().isPresent();

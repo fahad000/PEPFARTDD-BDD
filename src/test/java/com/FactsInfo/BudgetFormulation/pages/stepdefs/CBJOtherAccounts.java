@@ -34,7 +34,14 @@ public class CBJOtherAccounts {
 	@Then("^the 'Save' and '(.*)' buttons should be enabled$")
 	public void the_save_and_discard_buttons_should_be_enabled(List<String> buttons) throws Throwable {
 		for (String buttonName : buttons) {
-			assertTrue("the following options should not be avaiable: "+buttonName,cbj.allButtonsPresent(buttonName));
+			assertTrue("the following options should not be avaiable: "+buttonName,cbj.allButtonsPresent(buttonName));			
+	}
+	}
+	@Then("^the '(.*)' and '(.*)' button should be disabled$")
+	public void the_save_and_discard_buttons_should_be_disabled(List<String> buttons) throws Throwable {
+		for (String buttonName : buttons) {
+			assertTrue("the following options should not be avaiable: "+buttonName,cbj.updateAndReopenButon(buttonName));
+			
 	}
 	}
 	@When("^select the '(.*)' from the Bureau dropdown list$")
@@ -52,6 +59,18 @@ public class CBJOtherAccounts {
 	public void selecting_an_account_from_above_list_that_is_funded(String accounts) throws Throwable {
 		cbj.selectAccount(accounts);
 	}
+	@When("^I click on the 'Update' button$")
+	public void I_click_on_the_Update_button() throws Throwable {
+		cbj.clickUpdateStausButton();
+	}
+	@When("^the narrative status should be '(.*)'$")
+	public void the_narrative_status_should_be_All_Others_Cleared(List<String> status) throws Throwable {
+		for(String statusText: status) {
+			assertTrue("the narrative status should be not be BRM Approved: "+statusText,cbj.verifyNatStatus(statusText));
+		}
+		}
+
+					
 
 	@Then("^the following OU should display in OU dropdwon list:$")
 	public void the_following_OU_should_display_in_OU_dropdwon_list(List<String> ou) throws Throwable {

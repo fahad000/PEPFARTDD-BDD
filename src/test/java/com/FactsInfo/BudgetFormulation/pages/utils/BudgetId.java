@@ -2,7 +2,7 @@ package com.FactsInfo.BudgetFormulation.pages.utils;
 
 import java.util.Date;
 
-public class Rfs {
+public class BudgetId {
 	private Integer id;  
     private Long rfsId;    
     private String rfsNumber;    
@@ -35,7 +35,7 @@ public class Rfs {
     private Integer dataSize;
     private Date customerRequestedDate;    
     
-    public Rfs() {
+    public BudgetId() {
         // nothing here
     	
     }

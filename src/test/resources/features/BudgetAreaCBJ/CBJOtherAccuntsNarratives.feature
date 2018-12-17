@@ -2,7 +2,8 @@
 Feature: CBJ Narrative Other Accounts Narrative
 Background:
         Given that the 'FRA User' has logged into the facts info application
-        And I view my 'Budget Formulation' tile 
+        And I view my 'Budget Formulation' tile
+         
 #PBI-19535, 19537
 @version:Release1.0
 @scenario:test-2
@@ -26,9 +27,10 @@ Scenario: Verify FY20 CBJ Other accoonts tab displayd for based on bureau select
 @scenario:test-2 
 Scenario: Verify buttons for Other Accounts narrative
 		When I select 'Congressional Budget Justification' from Budget Area  
-		When select the 'USAID Management' from the Bureau dropdown list
-		When I view the 'Other Accounts' tab
-		Then the 'Save' and 'Discard' buttons should be enabled				
+		And select the 'USAID Management' from the Bureau dropdown list
+		And I view the 'Other Accounts' tab
+		Then the 'Save' and 'Discard' buttons should be enabled	
+					
 #PBI-19535
 @version:Release1.0
 @scenario:test-2 
