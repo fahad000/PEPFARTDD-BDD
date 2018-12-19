@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import net.serenitybdd.core.pages.PageObject;
 
 public class LogingPage extends PageObject{	
+	//static String loginUrl ="https://training.dfafacts.gov";
 	   static String loginUrl ="https://ngtest.dfafacts.gov";
 //	   static String loginUrl ="https://pepfar.dfafacts.gov/mechanisms/search";
 	    By checkTerms = By.xpath(".//*[@id='chkTerms']");

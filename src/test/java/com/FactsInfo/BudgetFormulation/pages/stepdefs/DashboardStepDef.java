@@ -3,6 +3,7 @@ package com.FactsInfo.BudgetFormulation.pages.stepdefs;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.FactsInfo.BudgetFormulation.pages.MinSteps.DashboardPageMinSteps;
 import com.FactsInfo.BudgetFormulationPage.dashboardPage;
 
 import cucumber.api.java.en.Given;
@@ -15,6 +16,7 @@ import java.util.List;
 public class DashboardStepDef {
 	
 	dashboardPage dashboard;
+	DashboardPageMinSteps commonStep;
 	
 	@Steps
 	com.FactsInfo.BudgetFormulation.pages.MinSteps.DashboardPageMinSteps commonSteps;

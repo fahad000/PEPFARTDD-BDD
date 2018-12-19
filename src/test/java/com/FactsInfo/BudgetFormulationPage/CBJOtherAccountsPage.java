@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import net.serenitybdd.core.pages.PageObject;
 
@@ -47,9 +48,9 @@ public class CBJOtherAccountsPage extends PageObject {
 	 }
      	   public boolean allButtonsPresent(String buttonName) {
      			if (element(saveButton).isCurrentlyEnabled() &&
-     				element(discardButton).isCurrentlyEnabled()&&
-     				element(updateNarStatusButton).isCurrentlyEnabled() &&
-             		element(reOpenNarStatusButton).isCurrentlyEnabled()
+     				element(discardButton).isCurrentlyEnabled()
+//     				element(updateNarStatusButton).isCurrentlyEnabled() &&
+//             		element(reOpenNarStatusButton).isCurrentlyEnabled()
      					) {
      				return true;
      				} else {
@@ -60,24 +61,36 @@ public class CBJOtherAccountsPage extends PageObject {
          			if (element(updateNarStatusButton).isCurrentlyEnabled() &&
          				element(reOpenNarStatusButton).isCurrentlyEnabled()
          					) {
-         				return false;
+         				return true;
          				} else {
-         					return true;
+         					return false;
          				}
 	 }	
 	 public boolean toplevelOUoptionIsNotVisible(String menuName) {
+		 new WebDriverWait(getDriver(), 4);
 		 if(element(oUnotvISIBLE).isVisible());
 		 return true;
 		} 
 	 public boolean verifyNatStatus(String staus) throws InterruptedException {	
-		 Thread.sleep(1000);
+		 Thread.sleep(1500);
 		 String element =String.format(verifyStatus,staus);
-		 Thread.sleep(1000);
+		 Thread.sleep(1500);
 		 return element(By.xpath(element)).waitUntilPresent().isPresent();
 			
 		}
 		public void clickUpdateStausButton() throws InterruptedException{
+			waitFor(ExpectedConditions.presenceOfElementLocated(updateNarStatusButton));
+			new WebDriverWait(getDriver(), 10);
 			element(updateNarStatusButton).click();
+			Thread.sleep(1000);
+			this.getDriver().switchTo().defaultContent();
+			Thread.sleep(1000);
+			element(statusConfirPopup).click();	
+		}
+		public void clickReOpenButton() throws InterruptedException{
+			waitFor(ExpectedConditions.presenceOfElementLocated(reOpenNarStatusButton));
+			new WebDriverWait(getDriver(), 10);
+			element(reOpenNarStatusButton).waitUntilClickable().click();
 			Thread.sleep(1000);
 			this.getDriver().switchTo().defaultContent();
 			Thread.sleep(1000);

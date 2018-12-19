@@ -2,6 +2,7 @@ package com.FactsInfo.BudgetFormulation.pages.stepdefs;
 
 
 
+import com.FactsInfo.BudgetFormulation.pages.MinSteps.DashboardPageMinSteps;
 import com.FactsInfo.BudgetFormulationPage.LogingPage;
 
 import cucumber.api.java.en.Given;
@@ -11,6 +12,7 @@ import net.thucydides.core.annotations.Steps;
 public class BudgetFormulationLoginStepDef{
 	
 	LogingPage login;
+//	DashboardPageMinSteps commonSteps1;
 	
 	@Steps
 	com.FactsInfo.BudgetFormulation.pages.MinSteps.DashboardPageMinSteps commonSteps;
@@ -20,6 +22,7 @@ public class BudgetFormulationLoginStepDef{
 	   login.visit(); 
 //	   login.workflowLogin(role);
 	   login.LoginWithRole(role);
+
 	}
 	
 }

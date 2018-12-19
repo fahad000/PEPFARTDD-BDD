@@ -13,8 +13,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 //        ,glue="/budget-formulation-test-automation/src/test/java/com/FactsInfo/BudgetFormulation/pages/stepdefs"
         ,dryRun = false
         ,monochrome = false
-        ,tags = { "@cbj-narrative-approval"
-        		,"@test-1"
+        ,tags = { "@cbj-narrative-approval-other"
+      		,"@test-5"
         		, "~@manual"
         		, "~@unreliable" }
 )

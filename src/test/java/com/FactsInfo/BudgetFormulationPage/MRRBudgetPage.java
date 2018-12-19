@@ -46,6 +46,7 @@ public class MRRBudgetPage extends PageObject{
 	 
 	    public void clicktab(String tab) {	 
 		 waitFor(ExpectedConditions.invisibilityOfElementLocated(clicktabXpath));
+		 new WebDriverWait(getDriver(), 4);
 	 	 String element =String.format(tabXpath,tab);
 	     element(By.xpath(element)).waitUntilEnabled().click();
 	     

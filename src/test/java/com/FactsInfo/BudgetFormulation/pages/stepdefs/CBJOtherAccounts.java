@@ -37,10 +37,17 @@ public class CBJOtherAccounts {
 			assertTrue("the following options should not be avaiable: "+buttonName,cbj.allButtonsPresent(buttonName));			
 	}
 	}
-	@Then("^the '(.*)' and '(.*)' button should be disabled$")
-	public void the_save_and_discard_buttons_should_be_disabled(List<String> buttons) throws Throwable {
+	@Then("^the 'Update Status' and '(.*)' button should be disabled$")
+	public void the_Update_Status_and_ReOpen_buttons_should_be_disabled(List<String> buttons) throws Throwable {
 		for (String buttonName : buttons) {
-			assertTrue("the following options should not be avaiable: "+buttonName,cbj.updateAndReopenButon(buttonName));
+			assertFalse("the following options should not be avaiable: "+buttonName,cbj.updateAndReopenButon(buttonName));
+			
+	}
+	}
+	@Then("^the 'Update Status' and '(.*)' button should be active$")
+	public void the_update_status_and_reopen_buttons_should_be_active(List<String> buttons) throws Throwable {
+		for (String buttonName : buttons) {
+			assertTrue("the following options should be not avaiable: "+buttonName,cbj.updateAndReopenButon(buttonName));
 			
 	}
 	}
@@ -62,6 +69,10 @@ public class CBJOtherAccounts {
 	@When("^I click on the 'Update' button$")
 	public void I_click_on_the_Update_button() throws Throwable {
 		cbj.clickUpdateStausButton();
+	}
+	@When("^I click on the 'Re-Open' button$")
+	public void I_click_on_the_reopen_button() throws Throwable {
+		cbj.clickReOpenButton();
 	}
 	@When("^the narrative status should be '(.*)'$")
 	public void the_narrative_status_should_be_All_Others_Cleared(List<String> status) throws Throwable {

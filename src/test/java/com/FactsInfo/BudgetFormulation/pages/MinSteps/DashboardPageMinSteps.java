@@ -24,10 +24,10 @@ public class DashboardPageMinSteps {
 	public void clickBudgetAreaDropdown() {
 		home.clickBudgetArea();
 	}
-//	@Step
-//	public void clickBudgetAreaDropdown() {
-//		home.clickBudgetArea();
-//	}
+	@Step
+     public void i_view_my_Budget_Formulation_tile(String tileName) {
+		dashboard.viewModulesTile(tileName);
+	}
 	@Step
 	public void clickMulationTile(String tileName) {
 		dashboard.viewModulesTile(tileName);
