@@ -1,6 +1,7 @@
 package com.FactsInfo.BudgetFormulation.pages.MinSteps;
 
 import com.FactsInfo.BudgetFormulationPage.BudgetHomePage;
+import com.FactsInfo.BudgetFormulationPage.EBSModulePage;
 import com.FactsInfo.BudgetFormulationPage.LogingPage;
 import com.FactsInfo.BudgetFormulationPage.dashboardPage;
 
@@ -10,6 +11,7 @@ public class DashboardPageMinSteps {
 	LogingPage login;
 	dashboardPage dashboard;
 	BudgetHomePage home;
+	EBSModulePage ebs;
 	
 	@Step
 	public void CheckTerms() {
@@ -23,6 +25,10 @@ public class DashboardPageMinSteps {
 	@Step
 	public void clickBudgetAreaDropdown() {
 		home.clickBudgetArea();
+	}
+	@Step
+	public void i_save() {
+		ebs.clickSaveButton();
 	}
 	@Step
      public void i_view_my_Budget_Formulation_tile(String tileName) {

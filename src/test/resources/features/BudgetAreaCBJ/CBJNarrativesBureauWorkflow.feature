@@ -78,4 +78,14 @@ Scenario: Bring the staus into initial stage
         And I click on the 'Re-Open' button
         And I click on the 'Re-Open' button            
         Then the narrative status should be 'Initial' 
-                 
+@test-6
+Scenario: Enter Narratives
+        Given that the 'FRA User' has logged into the facts info application
+        And I view my 'Budget Formulation' tile
+        When I select 'Congressional Budget Justification' from Budget Area 
+        When select the 'CA – Consular Affairs' from the Bureau dropdown list       
+        And I view the 'Bureau Overview' tab
+        When I enter my bureau Overview narrative and save 
+        
+         
+                      

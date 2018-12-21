@@ -5,14 +5,17 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import com.FactsInfo.BudgetFormulation.pages.MinSteps.DashboardPageMinSteps;
 import com.FactsInfo.BudgetFormulationPage.CBJOtherAccountsPage;
+import com.FactsInfo.BudgetFormulationPage.EBSModulePage;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CBJOtherAccounts {
-	
+	EBSModulePage ebs;
 	CBJOtherAccountsPage cbj;
+	DashboardPageMinSteps commonSteps;
 	
 	@When("^I select '(.*)' from Budget Area$")
 	public void i_select_Congressional_Budget_Justification_from_Budget_Area(String module) throws Throwable {
@@ -81,7 +84,11 @@ public class CBJOtherAccounts {
 		}
 		}
 
-					
+	@When("^I enter my bureau Overview narrative and save$")
+	public void i_enter_my_EBS_narrative_and_save() throws Throwable {
+		cbj.enterCBJNarrative();
+		ebs.clickSaveButton();
+}				
 
 	@Then("^the following OU should display in OU dropdwon list:$")
 	public void the_following_OU_should_display_in_OU_dropdwon_list(List<String> ou) throws Throwable {

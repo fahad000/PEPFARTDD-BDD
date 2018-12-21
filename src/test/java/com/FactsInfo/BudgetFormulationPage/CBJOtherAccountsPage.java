@@ -2,7 +2,9 @@ package com.FactsInfo.BudgetFormulationPage;
 
 import java.util.List;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,11 +31,20 @@ public class CBJOtherAccountsPage extends PageObject {
 	 By reOpenNarStatusButton=By.xpath(".//button[@data-ng-click='tlbr.reOpenNarrativeStatus()']");
 	 By statusConfirPopup=By.xpath(".//button[@ng-click='yes()']");
 	 static String verifyStatus=".//span[@class='ng-binding'][text()='%s']";
+	 By enterNarrativeCBJ= By.xpath(".//body[@autocorrect='off']");
 	 
 	 
 	 
-
-	
+	 
+	 
+	 public void enterCBJNarrative() throws InterruptedException {
+			WebElement iframe = this.element(By.xpath("//iframe"));
+			this.getDriver().switchTo().frame(iframe);
+			Thread.sleep(1000);
+			element(enterNarrativeCBJ).clear();
+			String generatedString = RandomStringUtils.randomAlphabetic(1000);
+			typeInto(element(enterNarrativeCBJ), generatedString);
+	 }
 	 public void selectBudgetArea(String module) {	
 		    waitFor(ExpectedConditions.presenceOfElementLocated(budgetAreaOptionClick));
 			element(budgetAreaOptionClick).click();

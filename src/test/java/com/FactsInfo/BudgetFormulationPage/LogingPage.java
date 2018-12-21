@@ -14,8 +14,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import net.serenitybdd.core.pages.PageObject;
 
 public class LogingPage extends PageObject{	
-	//static String loginUrl ="https://training.dfafacts.gov";
-	   static String loginUrl ="https://ngtest.dfafacts.gov";
+//	   static String loginUrl ="https://training.dfafacts.gov";
+//	static String loginUrl ="http://integration";
+	static String loginUrl ="https://ngtest.dfafacts.gov";
 //	   static String loginUrl ="https://pepfar.dfafacts.gov/mechanisms/search";
 	    By checkTerms = By.xpath(".//*[@id='chkTerms']");
 	    By userXpath =By.xpath( ".//*[@id='loginName']");
@@ -23,7 +24,7 @@ public class LogingPage extends PageObject{
 	    By notificationCloseXpath = By.xpath(".//button[@class='close']");
 	    By passwordInput = By.xpath(".//*[@id='Password']");
 	    static String submitButton =".//button[@id='btnLogin']";
-		   
+	   
 	    
 	      public void visit() { 	    	      
           this.openAt(loginUrl);  		      
@@ -97,7 +98,7 @@ public class LogingPage extends PageObject{
 				 user="testOUAdmin@state.gov";
 				 break;
 			 case "bp user" :
-				 user="Mariami@test.state.gov";
+				 user="FRAdmin01@test.state.gov";
 				 break;
 			 case "ou user" :
 				 user="testOUuser1@state.gov";

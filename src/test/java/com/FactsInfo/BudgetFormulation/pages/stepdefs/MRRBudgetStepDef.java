@@ -18,8 +18,8 @@ public class MRRBudgetStepDef {
 	@When("^I view the '(.*)' tab$")
 	public void i_view_the_Budget_tab(String tab) throws Throwable {
 		budget.clicktab(tab);
-			   
-	}
+	}	
+	
 
 	@Then("^current Mission Resource Request page display$")
 	public void current_Mission_Resource_Request_page_display() throws Throwable {

@@ -36,7 +36,8 @@ Scenario: Navigate to the tab options
 	   	  	|F Staff Recommendation|
 	   	  	|Bureau Appeal|
 	   	  	|OMB Submission|
-	   	  	|Congressional Budget Justification|  	  	
+	   	  	|Congressional Budget Justification|  
+	   	  	|Executive Budget Summary|	  	
 		And the following bureau options should be available:
 	   	  	|Africa|East Asia and Pacific|Europe and Eurasia|Near East|
 	   	  	|South and Central Asia|USAID Asia Regional|Western Hemisphere|AVC - Arms Control, Verification, and Compliance| 
