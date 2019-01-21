@@ -4,11 +4,11 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>facts.info</groupId>
-	<artifactId>budget-formulation-test-automation</artifactId>
+	<artifactId>pepfar-test-automation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>budget-formulation-test-automation</name>
+	<name>pepfarf-test-automation</name>
 	<description>Selenium test harness for the Facts Info product.</description>
 
 	<properties>

@@ -11,14 +11,20 @@ public class PEPFARHomeNavigation extends PageObject{
 	
 	String topLevelTabsXpath=".//span[@class='mat-h2'][text()='Mechanisms']";
 	By pageTitleXpath=By.xpath(".//*[@id='titleElement']");
-	By clickSearchTab=By.xpath(".//*[text()='Mechanism Search']");
+	By clickSearchTab=By.xpath("//a[.='Mechanism Search']");
 	By clickSearchIcon=By.xpath(".//*[@role='img'][text()='search']");
 	
 	public void clickTab(String tab) {
 		String tabName = String.format(topLevelTabsXpath);
-		element(tabName).click();
+//		try {
+//			this.getDriver().manage().timeouts().wait('4');
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		element(tabName).waitUntilPresent().click();
 		element(clickSearchTab).click();
-		element(clickSearchIcon).click();
+//		element(clickSearchIcon).click();
 	}
 		
 		public void clickSearch(String tab) {

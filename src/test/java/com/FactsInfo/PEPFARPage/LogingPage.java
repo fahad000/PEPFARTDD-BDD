@@ -16,13 +16,15 @@ import net.serenitybdd.core.pages.PageObject;
 public class LogingPage extends PageObject{	
 	//static String loginUrl ="https://training.dfafacts.gov";
 //	   static String loginUrl ="https://ngtest.dfafacts.gov";
-	   
+//	 static String loginUrl = System.getProperty("LoginUrl", "https://pepfar.dfafacts.gov/mechanisms/search");
 //	    By checkTerms = By.xpath(".//*[@id='chkTerms']");
 //	    By userXpath =By.xpath( ".//*[@id='loginName']");
 //	    String passwordXpath = ".//*[@id='Password']";
 //	    By notificationCloseXpath = By.xpath(".//button[@class='close']");
 //	    By passwordInput = By.xpath(".//*[@id='Password']");
 //	    static String submitButton =".//button[@id='btnLogin']";
+	
+	
 	   static String loginUrl ="https://pepfar.dfafacts.gov/mechanisms/search";   
 	   By checkTerms = By.xpath(".//button[@class='mat-button mat-primary']");
 	   By userXpath =By.xpath( ".//input[@formcontrolname='email']");
@@ -66,24 +68,25 @@ public class LogingPage extends PageObject{
 		 
 		 public void LoginWithRole(String role) throws InterruptedException {
 			//convert role to login name
-			String user =formatRole(role);
+			//String user =formatRole(role);
+			 String user =formatRole(role);
 			String password = "";		
 			//enter login name
 			element(checkTerms).click();
 			Thread.sleep(1000);
 			this.getDriver().switchTo().defaultContent();
 			element(userXpath).click();
-			element(userXpath).waitUntilEnabled().sendKeys(user);
+			element(userXpath).waitUntilEnabled().sendKeys("eddycr@state.gov");
 			Thread.sleep(1500);
 			
 			
 					
 			//enter password
 			if(role=="viewer") {
-				password="FactsInfo01!";
+				password="FactsInfo02!";
 			}
 			else {
-				password="FactsInfo01!";
+				password="FactsInfo02!";
 			}
 			waitFor(ExpectedConditions.presenceOfElementLocated(passwordInput));
 			Thread.sleep(2500);
@@ -97,77 +100,36 @@ public class LogingPage extends PageObject{
 		 public String formatRole(String role) {
 			 String user = "";
 			 switch(role.toLowerCase()) {
-			 case "fra user" :
+			 case "HQ user" :
 				 user="eddycr@state.gov";
 				 break;
-			 case "f user" :
-				 user="testFUser@state.gov";
-				 break;
-			 case "brm user" :
-				 user="testBRMuser@state.gov";
-				 break;
-			 case "ou admin" :
-				 user="testOUAdmin@state.gov";
-				 break;
-			 case "bp user" :
-				 user="Mariami@test.state.gov";
-				 break;
-			 case "ou user" :
-				 user="testOUuser1@state.gov";
-				 break;
-			 case "budget bureau" :
-				 user="TestBudgetBuearu@state.gov";
-				 break;
-			 default : 
-				 System.out.println("Invalid user role");
-				 break;
+//			 case "f user" :
+//				 user="testFUser@state.gov";
+//				 break;
+//			 case "brm user" :
+//				 user="testBRMuser@state.gov";
+//				 break;
+//			 case "ou admin" :
+//				 user="testOUAdmin@state.gov";
+//				 break;
+//			 case "bp user" :
+//				 user="Mariami@test.state.gov";
+//				 break;
+//			 case "ou user" :
+//				 user="testOUuser1@state.gov";
+//				 break;
+//			 case "budget bureau" :
+//				 user="TestBudgetBuearu@state.gov";
+//				 break;
+		 default : 
+			 System.out.println("Invalid user role");
+			 break;
 			 }
 			 return user;
 		 }
 		 
 		 
-		 public void workflowLogin(String role) {
-			 String user = null;
-			 String password =null;
-			 switch(role.toLowerCase()) {
-			 case "fra user" :
-				 user="nicholsjl1@state.gov";
-				 password="FactsInfo01!";
-				 break;
-			 case "f user" :
-				 user="fisherBE@state.gov";
-				 password="FactsInfo01!";
-				 break;
-			 case "brm user" :
-				 user="pissa@usaid.gov";
-				 password="FactsInfo01!";
-				 break;
-			 case "ou user" :
-				 user="porterja@state.gov";
-				 password="FactsInfo01!";
-				 break;
-			 case "bp user" :
-				 user="Mariami@test.state.gov";
-				 password="FactsInfo01!";
-				 break;
-			 case "ou admin" :
-				 user="rharris@usaid.gov";
-				 password="FactsInfo01!";
-				 break;
-			 case "budget bureau" :
-				 user="syousuf@usaid.gov";
-				 password="FactsInfo01!";
-				 break;
-			 default : 
-				 System.out.println("Invalid user role");
-				 break;
-			 }
-			element(checkTerms).click();
-			typeInto(element(userXpath),user);
-			typeInto(element(passwordInput),password);
-			//submit
-			element(submitButton).click();		      
-		 }
+		
 		
 	}
 		

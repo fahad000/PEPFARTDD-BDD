@@ -21,6 +21,7 @@ public class PEPFARLoginStepDef{
 	public void that_the_user_has_logged_into_the_PEPFAR_info_application(String role) throws Throwable {    
 	   login.visit(); 
 //	   common.i_acknowladge_terms();
+	   
 	   login.LoginWithRole(role);
 	  
 
