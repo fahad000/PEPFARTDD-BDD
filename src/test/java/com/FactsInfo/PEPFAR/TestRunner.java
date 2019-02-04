@@ -14,7 +14,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
         ,dryRun = false
         ,monochrome = false
         ,tags = { "@mecha-search"
-     		,"@test-1"
+     		,"@test-2"
         		, "~@manual"
         		, "~@unreliable" }
 )
